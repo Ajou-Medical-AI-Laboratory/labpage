@@ -49,7 +49,7 @@ function createFooter() {
   footer.innerHTML = `
     <div class="container footer-wrap">
       <p>© 2026 Ajou Medical AI Laboratory. All rights reserved.</p>
-      <p>Email: nahero@ajou.ac.kr</p>
+      <p>Email: jsclinic.naver.com</p>
     </div>
   `;
 }

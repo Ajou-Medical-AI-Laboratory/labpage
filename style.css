@@ -91,7 +91,7 @@ img {
       rgba(255, 255, 255, 0.62),
       rgba(255, 255, 255, 0.62)
     ),
-    url("images/main-background.jpg");
+    url("images/index-image/main-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -514,13 +514,14 @@ img {
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid #d2dbe8;
-  background: linear-gradient(135deg, #dbe7f5 0%, #a6bfdc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
 }
 
 .team-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .team-card h3 {
@@ -539,6 +540,85 @@ img {
 .team-role {
   font-weight: 700;
   color: #173964;
+}
+
+/* Director profile */
+.director-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 42px;
+  background: #ffffff;
+  border: 1px solid #dde4ee;
+  box-shadow: 0 3px 10px rgba(29, 44, 72, 0.04);
+  border-radius: 10px;
+  padding: 34px;
+  margin-bottom: 48px;
+}
+
+.director-image {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.director-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.director-content {
+  flex: 1;
+}
+
+.director-name {
+  margin: 0 0 18px;
+  font-size: 34px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.director-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.director-position {
+  margin: 0 0 28px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4f5b6b;
+}
+
+.director-subtitle {
+  margin: 0 0 14px;
+  font-size: 20px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.director-research {
+  margin: 0 0 28px 22px;
+  padding: 0;
+}
+
+.director-research li {
+  margin-bottom: 12px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.director-email {
+  margin: 0;
+  font-size: 17px;
+}
+
+.director-email a {
+  color: #0b3f8a;
+  text-decoration: underline;
 }
 
 /* =========================
