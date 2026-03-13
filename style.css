@@ -553,34 +553,40 @@ img {
   border-radius: 10px;
   padding: 34px;
   margin-bottom: 48px;
+  overflow: hidden;
 }
 
 .director-image {
   width: 340px;
-  flex-shrink: 0;
+  flex: 0 0 340px;
 }
 
 .director-image img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .director-content {
   flex: 1;
+  min-width: 0;
 }
 
 .director-name {
   margin: 0 0 18px;
   font-size: 34px;
+  line-height: 1.2;
   color: #222222;
   font-weight: 700;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .director-title {
   margin: 0 0 16px;
   font-size: 24px;
+  line-height: 1.3;
   color: #222222;
   font-weight: 700;
 }
@@ -590,6 +596,7 @@ img {
   font-size: 18px;
   line-height: 1.8;
   color: #4f5b6b;
+  overflow-wrap: break-word;
 }
 
 .director-subtitle {
@@ -614,6 +621,8 @@ img {
 .director-email {
   margin: 0;
   font-size: 17px;
+  line-height: 1.7;
+  overflow-wrap: break-word;
 }
 
 .director-email a {
@@ -731,6 +740,21 @@ img {
   .news-box {
     width: 100%;
   }
+  
+  .director-name {
+    font-size: 28px;
+  }
+
+  .director-title {
+    font-size: 22px;
+  }
+
+  .director-position,
+  .director-research li,
+  .director-email {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 }
 
 @media (max-width: 768px) {
@@ -844,5 +868,48 @@ img {
   .footer-wrap {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .director-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .director-image {
+    width: 100%;
+    max-width: 320px;
+    flex: none;
+  }
+
+  .director-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .director-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .director-name {
+    font-size: 32px;
+    line-height: 1.2;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .director-title {
+    font-size: 22px;
+  }
+
+  .director-position,
+  .director-email,
+  .director-research li {
+    font-size: 16px;
+    line-height: 1.7;
   }
 }
