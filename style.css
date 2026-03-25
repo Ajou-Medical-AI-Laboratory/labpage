@@ -13,6 +13,7 @@ body {
 
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 a {
@@ -102,6 +103,10 @@ img {
   grid-template-columns: 50% 50%;
   gap: 30px;
   align-items: stretch;
+}
+
+.hero-grid > * {
+  min-width: 0;
 }
 
 .hero-images {
@@ -897,6 +902,11 @@ img {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .nav-wrap {
     flex-direction: column;
     min-height: auto;
@@ -925,49 +935,112 @@ img {
     font-size: 16px;
   }
 
+  .hero-section {
+    padding: 20px 0 16px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
   .hero-images {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr;
-    height: 420px;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .hero-card {
     min-height: 0;
   }
 
+  .hero-label {
+    left: 12px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .hero-label h3 {
+    font-size: 16px;
+  }
+
+  .hero-label p {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
   .hero-text {
     padding: 28px 24px;
+    height: auto;
   }
 
   .hero-text h1 {
-    font-size: 38px;
+    font-size: 32px;
   }
 
   .hero-text h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .hero-desc {
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .hero-buttons {
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .btn {
-    min-width: 100px;
-    padding: 12px 16px;
-    font-size: 15px;
+    min-width: 0;
+    flex: 1 1 calc(50% - 10px);
+    padding: 12px 14px;
+    font-size: 14px;
   }
 
   .program-grid {
     grid-template-columns: 1fr;
   }
 
+  .program-grid,
+  .team-grid,
+  .project-list,
+  .joinus-grid {
+    gap: 18px;
+  }
+
+  .program-card,
   .project-card {
     padding: 24px 20px;
+  }
+
+  .content-card,
+  .publication-item,
+  .news-list-item,
+  .team-card,
+  .director-profile {
+    padding: 20px;
+  }
+
+  .project-card h3,
+  .content-card h3,
+  .publication-item h3,
+  .team-card h3 {
+    font-size: 20px;
+  }
+
+  .content-card p,
+  .publication-item p,
+  .project-card p,
+  .team-card p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .team-grid,
