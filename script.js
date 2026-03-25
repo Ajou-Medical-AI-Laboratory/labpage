@@ -3,6 +3,7 @@ const siteTitle = "AJOU MEDICAL AI LABORATORY";
 const navItems = [
   { label: "Home", href: "index.html" },
   { label: "Research", href: "research.html" },
+  { label: "Project", href: "project.html" },
   { label: "Publications", href: "publications.html" },
   { label: "Team", href: "team.html" },
   { label: "Join Us", href: "joinus.html" },
