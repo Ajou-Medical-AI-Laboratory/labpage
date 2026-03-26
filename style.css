@@ -187,7 +187,7 @@ img {
   width: 100%;
   height: 2px;
   background: #d2d8e4;
-  margin: 20px 0 18px;
+  margin: 24px 0 22px;
 }
 
 .hero-text h2 {
@@ -199,7 +199,7 @@ img {
 }
 
 .hero-desc {
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 17px;
   line-height: 1.75;
   color: #546277;
@@ -207,7 +207,7 @@ img {
 }
 
 .hero-buttons {
-  margin-top: 20px;
+  margin-top: 28px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
