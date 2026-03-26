@@ -55,9 +55,66 @@ function createFooter() {
   `;
 }
 
+async function loadHomeNews() {
+  const newsContainer = document.getElementById("home-news-list");
+  if (!newsContainer) return;
+
+  try {
+    const response = await fetch("news.html");
+    if (!response.ok) {
+      throw new Error(`Failed to load news: ${response.status}`);
+    }
+
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    const newsItems = Array.from(doc.querySelectorAll(".news-list-item")).slice(0, 3);
+
+    if (newsItems.length === 0) {
+      newsContainer.innerHTML = `
+        <div class="news-item">
+          <div class="news-check">✓</div>
+          <div>No news items found.</div>
+        </div>
+      `;
+      return;
+    }
+
+    newsContainer.innerHTML = newsItems.map((item) => {
+      const date = item.querySelector(".news-date")?.textContent?.trim() ?? "";
+      const anchor = item.querySelector(".news-text a");
+      const text = anchor?.textContent?.trim() ?? item.querySelector(".news-text")?.textContent?.trim() ?? "";
+      const href = anchor?.getAttribute("href") ?? "news.html";
+
+      return `
+        <div class="news-item">
+          <div class="news-check">✓</div>
+          <div class="news-item-content">
+            <div class="news-item-date">${date}</div>
+            <a class="news-item-link" href="${href}" ${href === "news.html" ? "" : 'target="_blank" rel="noopener noreferrer"'}>
+              ${text}
+            </a>
+          </div>
+        </div>
+      `;
+    }).join("");
+  } catch (error) {
+    newsContainer.innerHTML = `
+      <div class="news-item">
+        <div class="news-check">✓</div>
+        <div class="news-item-content">
+          <div class="news-item-date">Notice</div>
+          <a class="news-item-link" href="news.html">View the latest updates on the News page</a>
+        </div>
+      </div>
+    `;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   createHeader();
   createFooter();
+  loadHomeNews();
 });
 
 const revealElements = document.querySelectorAll(".reveal");
